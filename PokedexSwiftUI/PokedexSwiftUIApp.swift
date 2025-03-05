@@ -1,17 +1,15 @@
-//
-//  PokedexSwiftUIApp.swift
-//  PokedexSwiftUI
-//
-//  Created by Dorian PAPIRIS on 2/17/25.
-//
-
 import SwiftUI
 
 @main
 struct PokedexSwiftUIApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate // ✅ Lien vers AppDelegate
+    @State private var isDarkMode = false
+    let persistenceController = PersistenceController.shared
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PokemonListView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

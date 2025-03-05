@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import CoreData
+
+@objc(PokemonEntity)
+public class PokemonEntity: NSManagedObject {
+
+}

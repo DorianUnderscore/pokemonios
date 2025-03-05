@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension PokemonEntity {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<PokemonEntity> {
@@ -17,13 +16,15 @@ extension PokemonEntity {
     }
 
     @NSManaged public var id: Int64
-    @NSManaged public var imageUrl: String?
     @NSManaged public var name: String?
-    @NSManaged public var stats: String?
+    @NSManaged public var imageUrl: String?
     @NSManaged public var types: String?
+    @NSManaged public var stats: String?
+    @NSManaged public var isFavorite: Bool  // Ajout de l'attribut isFavorite
 
 }
 
 extension PokemonEntity : Identifiable {
 
 }
+
